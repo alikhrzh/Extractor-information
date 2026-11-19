@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "a4d1862f608974f0bb25265210ae5c5a051a369d29e031a34d168f90888d5cc9",
+  "expected_sha256": "b54a469526a80facbecf13f8a062eb5c2d0922316f45f3deecdecaa33111217a",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ЖШС «Көкжиек Құрылыс» / ТОО \\\"Кокжиек Курылыс\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"AKT-09\",\n  \"doc_date\": \"2026-10-09\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 340000.0,\n  \"vat_amount\": 0.0,\n  \"line_items\": [\n    {\n      \"name\": \"Қызмет көрсету / Оказание услуг\",\n      \"qty\": 1,\n      \"price\": 340000.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Повреждённый БИН не исправляй: null, confidence 0.0 и предупреждение.\",\n    \"Номер документа найден по роли (Шот-фактура №), а не только по символу №.\"\n  ]\n}",
+  "done_reason": "stop"
+}

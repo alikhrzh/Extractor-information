@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "235b288fd642994801b888617489eb88e2ab4fd9ed9106408839fb99c43ba371",
+  "expected_sha256": "dc37269f79a499b2a405a59dfb60e680a0e75ff2a3ace4980415d475416678a8",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"act\",\n  \"supplier_name\": \"ТОО \\\"Жарық Сервис\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"JS-17\",\n  \"doc_date\": \"2026-09-17\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 10000,\n  \"vat_amount\": 0,\n  \"line_items\": [\n    {\n      \"name\": \"Настройка светильников / Настройка светильников\",\n      \"qty\": 2,\n      \"price\": 5000\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Повреждённый БИН: '240640112780' не содержит ровно 12 цифр.\",\n    \"Противоречие в данных: дата составления (17.09.2026) противоречит текущему времени.\"\n  ]\n}",
+  "done_reason": "stop"
+}

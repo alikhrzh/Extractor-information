@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "b62f87bc8479ac912b4cf19fd94f595c07274149e54ebe8d62e7b727735f5299",
+  "expected_sha256": "cd38e2f7fab05c4df7bf1e4fada400aa758b2564882cd68005103578f26cc2f9",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"commercial_offer\",\n  \"supplier_name\": \"Товарищество с ограниченной ответственностью \\\"Торговый Дом INTANT\\\"\",\n  \"supplier_bin\": \"110440005651\",\n  \"doc_number\": \"2803\",\n  \"doc_date\": \"2024-02-20\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 300000.0,\n  \"vat_amount\": 32142.86,\n  \"line_items\": [\n    {\n      \"name\": \"Проведение семинара по ИСО Орион\",\n      \"qty\": 1,\n      \"price\": 300000.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 1.0\n  },\n  \"warnings\": []\n}",
+  "done_reason": "stop"
+}

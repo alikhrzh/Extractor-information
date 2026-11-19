@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "079b7b528157e07d20b120c19eb57d9bc2fb7ca0b180310eb151d504c2f812d7",
+  "expected_sha256": "2ff0727ed6ee3f9d6d328431e5abd190aba6e2bcd05acb94f77241ec74be74a8",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ТОО Электронная торговая площадка ЕТБ\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"0000045111\",\n  \"doc_date\": \"2026-11-19\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 69600.0,\n  \"vat_amount\": 9600.0,\n  \"line_items\": [\n    {\n      \"name\": \"Абонентская плата за год / Абонентская плата за год\",\n      \"qty\": 1,\n      \"price\": 69600.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Поставщик указан только как БИН/ИИН без явного подписания полного названия в документе.\",\n    \"БИН поставщика не содержит ровно 12 цифр (находится в поле 'Бенефициар' и 'Поставщик', но не подписан явно как идентификатор).\"\n  ]\n}",
+  "done_reason": "stop"
+}

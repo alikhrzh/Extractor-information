@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "f0bfe0e6a919a299f3337cd8fe04863a42d31376a7f7f4aa0f4406632a27f978",
+  "expected_sha256": "3f0c82752752831c3300cce2c06eceac6bc515a9701db4257658449e2ee5dd85",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ТОО \\\"Северный Маяк\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"SM-42\",\n  \"doc_date\": \"2026-10-05\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 125000,\n  \"vat_amount\": null,\n  \"line_items\": [\n    {\n      \"name\": \"Настройка оборудования\",\n      \"qty\": 1,\n      \"price\": 120000\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Два разных значения для даты составления: 04.10.2026 и 05.10.2026. Выбрано первое по тексту.\",\n    \"Два разных значения для итоговой суммы к оплате: 120 000 KZT и 125 000 KZT.\"\n  ]\n}",
+  "done_reason": "stop"
+}

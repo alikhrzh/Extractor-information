@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "d422093c8ee706bf6517b4957bd011459c22793137105b9373c5dba690a81ab9",
+  "expected_sha256": "629ae992661d4c7f4fa2a1aeda8e9a95405eccbdbf5983e299f52dd5418157d6",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"commercial_offer\",\n  \"supplier_name\": \"Digital Solutions\",\n  \"supplier_bin\": null,\n  \"doc_number\": null,\n  \"doc_date\": \"2026-11-05\",\n  \"currency\": \"KZT\",\n  \"total_amount\": null,\n  \"vat_amount\": null,\n  \"line_items\": [\n    {\n      \"name\": \"Разработка сайта\",\n      \"qty\": null,\n      \"price\": 450000.0\n    },\n    {\n      \"name\": \"Техподдержка, в месяц\",\n      \"qty\": null,\n      \"price\": 60000.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Отсутствует явно указанная окончательная сумма к оплате.\",\n    \"Не удалось определить номер текущего документа.\"\n  ]\n}",
+  "done_reason": "stop"
+}

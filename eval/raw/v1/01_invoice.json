@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "e61461cfc61601dfb28b643f3e5d1ed5696da6c8c95272476e97ba747f21ce2f",
+  "expected_sha256": "90ae6789c32695ea22873cf482fb55f2b772db4a74c46758202e7b54a0fc9e55",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ТОО \\\"Алматы Трейд Компани\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"1245\",\n  \"doc_date\": \"2026-11-12\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 186180,\n  \"vat_amount\": 25680,\n  \"line_items\": [\n    {\n      \"name\": \"Бумага А4 80г/м2 / Paper A4 80g/m2\",\n      \"qty\": 50,\n      \"price\": 2100\n    },\n    {\n      \"name\": \"Картридж HP 85A / HP 85A cartridge\",\n      \"qty\": 3,\n      \"price\": 18500\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Повреждённый или невалидный БИН: '170340021554' содержит 14 символов вместо требуемых 12.\",\n    \"Дата документа в будущем (2026 год).\"\n  ]\n}",
+  "done_reason": "stop"
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "01fa145672a727bf7afdb76ea342aabdf60e4a5e1eeff38c41290afcab97bd83",
+  "expected_sha256": "0b3146d479ebb8550d45287ae007a2f2897852081a469dde1261114e8f9a1237",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"act\",\n  \"supplier_name\": \"ТОО \\\"СК Береке\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"15\",\n  \"doc_date\": \"2020-08-27\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 2385600.0,\n  \"vat_amount\": null,\n  \"line_items\": [\n    {\n      \"name\": \"Текущий ремонт дороги с.Жалпаксай ул.Булантая\",\n      \"qty\": 1,\n      \"price\": 2385600.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Не удалось извлечь БИН поставщика: текст содержит ИИН/БИН исполнителя (131040011112), но не содержит явно указанного БИН поставщика.\",\n    \"OCR-кандидат для supplier_bin: null\"\n  ]\n}",
+  "done_reason": "stop"
+}

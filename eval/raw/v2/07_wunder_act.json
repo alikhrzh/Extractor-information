@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "b635fbf259be73222d735ed7d8822a62f3016149c0b2aa1b7a2d578574689e63",
+  "expected_sha256": "ab884d521f06035b196ab586efbe7b9700a8aa25755dba46834980548f2b3fee",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"act\",\n  \"supplier_name\": \"Товарищество с ограниченной ответственностью \\\"Wunder Digital (Вундер Диджитал)\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"1111\",\n  \"doc_date\": \"2023-05-30\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 111000.0,\n  \"vat_amount\": null,\n  \"line_items\": [\n    {\n      \"name\": \"Услуги по обеспечению возможности размещения рекламных объявлений в системах контекстной и/или таргетированной рекламы Yandex KZ_Almaty_Зачисления\",\n      \"qty\": 1,\n      \"price\": 111000.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Не удалось извлечь БИН поставщика: текст содержит ИИН/БИН исполнителя (170440020478), но не содержит явно указанного БИН поставщика.\",\n    \"OCR-кандидат для supplier_bin: null\"\n  ]\n}",
+  "done_reason": "stop"
+}

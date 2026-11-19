@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "079b7b528157e07d20b120c19eb57d9bc2fb7ca0b180310eb151d504c2f812d7",
+  "expected_sha256": "2ff0727ed6ee3f9d6d328431e5abd190aba6e2bcd05acb94f77241ec74be74a8",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ТОО Электронная торговая площадка ЕТБ\",\n  \"supplier_bin\": \"191240018346\",\n  \"doc_number\": \"0000045111\",\n  \"doc_date\": \"2026-11-19\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 69600.0,\n  \"vat_amount\": 9600.0,\n  \"line_items\": [\n    {\n      \"name\": \"Абонентская плата за год\",\n      \"qty\": 1,\n      \"price\": 69600.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 1.0\n  },\n  \"warnings\": []\n}",
+  "done_reason": "stop"
+}

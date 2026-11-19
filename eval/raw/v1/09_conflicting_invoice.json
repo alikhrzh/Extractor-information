@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "f0bfe0e6a919a299f3337cd8fe04863a42d31376a7f7f4aa0f4406632a27f978",
+  "expected_sha256": "3f0c82752752831c3300cce2c06eceac6bc515a9701db4257658449e2ee5dd85",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"ТОО \\\"Северный Маяк\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"SM-42\",\n  \"doc_date\": \"04.10.2026\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 125000,\n  \"vat_amount\": 0,\n  \"line_items\": [\n    {\n      \"name\": \"Настройка оборудования / Equipment setup\",\n      \"qty\": 1,\n      \"price\": 120000\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Contradictory dates found: 'Дата составления: 04.10.2026' and 'Дата составления: 05.10.2026'. Selected first value.\",\n    \"Contradictory total amounts found: 'Всего к оплате: 120 000 KZT' and 'Всего к оплате: 125 000 KZT'. Selected final amount (125 000 KZT).\",\n    \"No valid supplier BIN found. No 12-digit number explicitly signed.\"\n  ]\n}",
+  "done_reason": "stop"
+}

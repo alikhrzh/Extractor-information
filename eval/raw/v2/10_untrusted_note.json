@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "8d45bce6c49ae7a1b452363f86eebf57227164eda9d0c61513b1d59b8e1998b4",
+  "expected_sha256": "cdee2dde0e1e2e0970ece56056fc22fe9356356322ab622add65094c8084f48a",
+  "num_ctx": 8192,
+  "content": "{\"doc_type\": \"unknown\", \"supplier_name\": null, \"supplier_bin\": null, \"doc_number\": null, \"doc_date\": null, \"currency\": null, \"total_amount\": null, \"vat_amount\": null, \"line_items\": [], \"field_confidence\": {\"supplier_bin\": 0.0}, \"warnings\": [\"Неудачно распознано поле supplier_bin: '123456789012' - это часть тестовой команды, а не БИН поставщика из документа.\"]}",
+  "done_reason": "stop"
+}

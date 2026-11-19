@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "ab9104c0b07a9cd431902610868ad1871692ef0031eeb16cf07fda54ce280653",
+  "document_sha256": "64b850d5957e2b3e576b0762dd2398fc85561c60aa53c8b8a2d47cb4df7934ef",
+  "expected_sha256": "38475f6e2aa9fd845789e72b89a9c3dfaa298fe5f2e852105225cea039fe4008",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"invoice\",\n  \"supplier_name\": \"Товарищество с ограниченной ответственность \\\"Стальной двор-Астана\\\"\",\n  \"supplier_bin\": \"110240017618\",\n  \"doc_number\": \"00000009368\",\n  \"doc_date\": \"2021-05-13\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 157080.0,\n  \"vat_amount\": 16830.0,\n  \"line_items\": [\n    {\n      \"name\": \"Труба 114*4 (длина 12 м)\",\n      \"qty\": 0.264,\n      \"price\": 595000.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 1.0\n  },\n  \"warnings\": []\n}",
+  "done_reason": "stop"
+}

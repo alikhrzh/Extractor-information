@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "01fa145672a727bf7afdb76ea342aabdf60e4a5e1eeff38c41290afcab97bd83",
+  "expected_sha256": "0b3146d479ebb8550d45287ae007a2f2897852081a469dde1261114e8f9a1237",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"act\",\n  \"supplier_name\": \"ТОО \\\"СК Береке\\\"\",\n  \"supplier_bin\": null,\n  \"doc_number\": \"15\",\n  \"doc_date\": \"2020-08-27\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 2385600.0,\n  \"vat_amount\": 0.0,\n  \"line_items\": [\n    {\n      \"name\": \"Текущий ремонт дороги с.Жалпаксай ул.Булантая / Current road repair of village Zhalpaksai st. Bulantaya\",\n      \"qty\": 1,\n      \"price\": 2385600.0\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Supplier BIN not explicitly signed or contains invalid format.\",\n    \"Document number '15' found in role 'Номер документа', overriding contract number '27'.\"\n  ]\n}",
+  "done_reason": "stop"
+}

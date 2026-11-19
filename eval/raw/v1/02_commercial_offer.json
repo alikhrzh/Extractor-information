@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.5:4b",
+  "prompt_sha256": "bb9f899943493bd5397201edc50ae40615d27569a7ec682c842443d161274bdd",
+  "document_sha256": "d422093c8ee706bf6517b4957bd011459c22793137105b9373c5dba690a81ab9",
+  "expected_sha256": "629ae992661d4c7f4fa2a1aeda8e9a95405eccbdbf5983e299f52dd5418157d6",
+  "num_ctx": 8192,
+  "content": "{\n  \"doc_type\": \"commercial_offer\",\n  \"supplier_name\": \"Digital Solutions\",\n  \"supplier_bin\": null,\n  \"doc_number\": null,\n  \"doc_date\": \"2026-11-05\",\n  \"currency\": \"KZT\",\n  \"total_amount\": 510000,\n  \"vat_amount\": 0,\n  \"line_items\": [\n    {\n      \"name\": \"Разработка сайта / Website development\",\n      \"qty\": 1,\n      \"price\": 450000\n    },\n    {\n      \"name\": \"Техподдержка, в месяц / Technical support per month\",\n      \"qty\": 1,\n      \"price\": 60000\n    }\n  ],\n  \"field_confidence\": {\n    \"supplier_bin\": 0.0\n  },\n  \"warnings\": [\n    \"Supplier BIN is not explicitly signed or contains exactly 12 digits.\",\n    \"Document date is the composition date, not the validity period.\"\n  ]\n}",
+  "done_reason": "stop"
+}
