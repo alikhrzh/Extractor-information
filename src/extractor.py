@@ -5,7 +5,7 @@ import os
 import sys
 from pathlib import Path
 
-from ollama import chat
+from ollama import RequestError, ResponseError, chat
 from pydantic import ValidationError
 
 from src.models import Document
@@ -55,14 +55,32 @@ def extract(text: str, model: str, prompt_version: str = "v2", think: bool = Fal
     return document
 
 
-if __name__ == "__main__":
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Extract structured data from a text document")
     parser.add_argument("file", type=Path, help="UTF-8 text document")
     parser.add_argument("--model", default=os.getenv("OLLAMA_MODEL", "qwen3.5:4b"))
     parser.add_argument("--prompt", choices=("v1", "v2"), default="v2")
     parser.add_argument("--think", action="store_true", help="Show model reasoning")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
-    text = args.file.read_text(encoding="utf-8")
-    document = extract(text, args.model, args.prompt, args.think)
+    try:
+        text = args.file.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        print(f"Ошибка чтения файла: {exc}", file=sys.stderr)
+        return 1
+
+    try:
+        document = extract(text, args.model, args.prompt, args.think)
+    except InvalidModelResponse:
+        print("Ошибка: модель дважды вернула невалидный JSON.", file=sys.stderr)
+        return 1
+    except (OSError, RequestError, ResponseError) as exc:
+        print(f"Ошибка вызова Ollama: {exc}", file=sys.stderr)
+        return 1
+
     print(document.model_dump_json(indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

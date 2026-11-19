@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import statistics
 from pathlib import Path
 
 from ollama import chat
@@ -76,6 +77,9 @@ def load_or_collect(path: Path, version: str, model: str, collect: bool) -> str:
         "num_ctx": NUM_CTX,
         "content": response.message.content or "",
         "done_reason": str(getattr(response, "done_reason", None)),
+        "total_duration": getattr(response, "total_duration", None),
+        "prompt_eval_count": getattr(response, "prompt_eval_count", None),
+        "eval_count": getattr(response, "eval_count", None),
     }
     raw_path.parent.mkdir(parents=True, exist_ok=True)
     raw_path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -114,6 +118,25 @@ def report(group: str, cells: dict) -> None:
         print(f"{metric:28} {'  '.join(f'{cells[key][metric]:>5}' for key in 'ABCD')}")
 
 
+def report_speed(paths: list[Path], version: str) -> None:
+    records = [json.loads((RAW / version / f"{path.stem}.json").read_text(encoding="utf-8")) for path in paths]
+    measured = [r for r in records if all(isinstance(r.get(k), (int, float)) for k in
+                ("total_duration", "prompt_eval_count", "eval_count"))]
+    print(f"\nСкорость {version}: замеров {len(measured)}/{len(records)}")
+    if not measured:
+        print("Нет метаданных времени и токенов в сохранённых ответах; нужны новые вызовы модели.")
+        return
+    secs = [r["total_duration"] / 1_000_000_000 for r in measured]  # Ollama возвращает наносекунды
+    in_tok = [r["prompt_eval_count"] for r in measured]
+    out_tok = [r["eval_count"] for r in measured]
+    mean = statistics.mean(secs)
+    print(f"среднее: {mean:.1f} с | медиана: {statistics.median(secs):.1f} с | макс: {max(secs):.1f} с")
+    print(f"средний вход: {statistics.mean(in_tok):.0f} ток | средний выход: {statistics.mean(out_tok):.0f} ток")
+    if mean > 0:
+        print(f"теоретически за сутки последовательно: {86400 / mean:.0f} документов")
+        print(f"для 10 000 в сутки: {10000 * mean / 86400:.1f} непрерывно занятых обработчиков (оценка)")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Compare v1/v2 with the same saved model answers")
     parser.add_argument("--collect", action="store_true", help="Call Ollama for missing raw answers")
@@ -143,6 +166,8 @@ def main() -> None:
 
     for group in ("dev", "holdout", "all"):
         report(group, groups[group])
+    for version in ("v1", "v2"):
+        report_speed(paths, version)
 
 
 if __name__ == "__main__":
