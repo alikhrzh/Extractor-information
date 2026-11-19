@@ -1,0 +1,15 @@
+{
+  "doc_type": "act",
+  "supplier_name": "Товарищество с ограниченной ответственностью \"Wunder Digital (Вундер Диджитал)\"",
+  "supplier_bin": "170440020478",
+  "doc_number": "1111",
+  "doc_date": "2023-05-30",
+  "currency": null,
+  "total_amount": 111000,
+  "vat_amount": null,
+  "line_items": [
+    {"name": "Услуги по обеспечению возможности размещения рекламных объявлений в системах контекстной и/или таргетированной рекламы Yandex KZ_Almaty_Зачисления", "qty": 1, "price": 111000}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": []
+}

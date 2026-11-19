@@ -1,0 +1,18 @@
+{
+  "doc_type": "invoice",
+  "supplier_name": "ТОО \"Северный Маяк\"",
+  "supplier_bin": null,
+  "doc_number": "SM-42",
+  "doc_date": "2026-10-04",
+  "currency": "KZT",
+  "total_amount": 120000,
+  "vat_amount": null,
+  "line_items": [
+    {"name": "Настройка оборудования", "qty": 1, "price": 120000}
+  ],
+  "field_confidence": {"supplier_bin": 0.0},
+  "warnings": [
+    "Конфликт дат составления: 04.10.2026 и 05.10.2026; выбрана первая дата 04.10.2026.",
+    "Конфликт сумм «Всего к оплате»: 120 000 и 125 000 KZT; выбрана первая сумма 120 000."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "doc_type": "invoice",
+  "supplier_name": "Товарищество с ограниченной ответственностью \"Стальной двор-Астана\"",
+  "supplier_bin": "110240017618",
+  "doc_number": "00000009368",
+  "doc_date": "2021-05-13",
+  "currency": "KZT",
+  "total_amount": 157080,
+  "vat_amount": 16830,
+  "line_items": [
+    {"name": "Труба 114*4 (длина 12 м)", "qty": 0.264, "price": 595000}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": []
+}

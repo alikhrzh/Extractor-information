@@ -1,0 +1,15 @@
+{
+  "doc_type": "act",
+  "supplier_name": "ТОО \"Жарық Сервис\"",
+  "supplier_bin": "240640112780",
+  "doc_number": "JS-17",
+  "doc_date": "2026-09-17",
+  "currency": "KZT",
+  "total_amount": 10000,
+  "vat_amount": null,
+  "line_items": [
+    {"name": "Настройка светильников", "qty": 2, "price": null}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": ["Цена позиции содержит OCR-символ O («5 O00»); значение не восстановлено и оставлено null."]
+}

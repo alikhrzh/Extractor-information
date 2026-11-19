@@ -1,0 +1,15 @@
+{
+  "doc_type": "commercial_offer",
+  "supplier_name": "Товарищество с ограниченной ответственностью \"Торговый Дом INTANT\"",
+  "supplier_bin": "110440005651",
+  "doc_number": "2803",
+  "doc_date": "2024-02-20",
+  "currency": "KZT",
+  "total_amount": 300000,
+  "vat_amount": 32142.86,
+  "line_items": [
+    {"name": "Проведение семинара по ИСО Орион", "qty": 1, "price": 300000}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": []
+}

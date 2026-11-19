@@ -4,9 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from pydantic import ValidationError
-
-from src.extractor import extract
+from src.extractor import InvalidModelResponse, extract_with_attempts
 from src.models import Document
 
 
@@ -16,21 +14,18 @@ EXPECTED_DIR = ROOT / "eval" / "expected"
 FIELDS = list(Document.model_fields)
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Evaluate extraction against expected JSON")
-    parser.add_argument("--model", default="qwen3.5:4b")
-    parser.add_argument("--prompt", choices=("v1", "v2"), default="v1")
-    args = parser.parse_args()
-
+def evaluate(model: str, prompt: str, think: bool) -> dict:
     documents = sorted(DOCUMENTS_DIR.glob("*.txt"))
     if not documents:
         raise SystemExit("No text documents found")
 
+    print(f"\nMode: think={think}, prompt={prompt}", flush=True)
     correct = {field: 0 for field in FIELDS}
     hallucinations = 0
     omissions = 0
     valid_count = 0
     errors = 0
+    retries = 0
 
     for path in documents:
         expected_path = EXPECTED_DIR / f"{path.stem}.json"
@@ -41,8 +36,17 @@ def main() -> None:
         print(f"{path.name}:", flush=True)
 
         try:
-            actual = extract(path.read_text(encoding="utf-8"), args.model, args.prompt).model_dump()
-        except (ValidationError, ValueError, OSError) as exc:
+            result, attempts = extract_with_attempts(
+                path.read_text(encoding="utf-8"), model, prompt, think
+            )
+            actual = result.model_dump()
+            retries += attempts
+        except InvalidModelResponse as exc:
+            retries += 1
+            errors += 1
+            print(f"  invalid response: {exc}", flush=True)
+            continue
+        except (ValueError, OSError) as exc:
             errors += 1
             print(f"  invalid response: {exc}", flush=True)
             continue
@@ -67,6 +71,25 @@ def main() -> None:
         print(f"  {field}: {correct[field]}/{len(documents)}")
     print(f"Hallucinations (null expected, value returned): {hallucinations}")
     print(f"Omissions (value expected, null returned): {omissions}")
+    print(f"Retries attempted: {retries}; final failures: {errors}")
+    return {
+        "correct": correct,
+        "hallucinations": hallucinations,
+        "omissions": omissions,
+        "valid": valid_count,
+        "errors": errors,
+        "retries": retries,
+        "total": len(documents),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Evaluate extraction against expected JSON")
+    parser.add_argument("--model", default="qwen3.5:4b")
+    parser.add_argument("--prompt", choices=("v1", "v2"), default="v2")
+    parser.add_argument("--think", action="store_true")
+    args = parser.parse_args()
+    evaluate(args.model, args.prompt, args.think)
 
 
 if __name__ == "__main__":

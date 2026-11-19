@@ -1,0 +1,15 @@
+{
+  "doc_type": "invoice",
+  "supplier_name": "ТОО Электронная торговая площадка ЕТБ",
+  "supplier_bin": "191240018346",
+  "doc_number": "0000045111",
+  "doc_date": "2026-11-19",
+  "currency": "KZT",
+  "total_amount": 69600,
+  "vat_amount": 9600,
+  "line_items": [
+    {"name": "Абонентская плата за год", "qty": 1, "price": 69600}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": []
+}

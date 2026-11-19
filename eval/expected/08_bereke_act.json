@@ -1,0 +1,15 @@
+{
+  "doc_type": "act",
+  "supplier_name": "ТОО \"СК Береке\"",
+  "supplier_bin": "131040011112",
+  "doc_number": "15",
+  "doc_date": "2020-08-27",
+  "currency": null,
+  "total_amount": 2385600,
+  "vat_amount": null,
+  "line_items": [
+    {"name": "Текущий ремонт дороги с.Жалпаксай ул.Булантая", "qty": 1, "price": 2385600}
+  ],
+  "field_confidence": {"supplier_bin": 1.0},
+  "warnings": []
+}
