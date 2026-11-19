@@ -1,0 +1,15 @@
+{
+  "doc_type": "invoice",
+  "supplier_name": "ЖШС «Көкжиек Құрылыс» / ТОО \"Кокжиек Курылыс\"",
+  "supplier_bin": null,
+  "doc_number": "AKT-09",
+  "doc_date": "2026-10-09",
+  "currency": "KZT",
+  "total_amount": 340000,
+  "vat_amount": 0,
+  "line_items": [
+    {"name": "Қызмет көрсету / Оказание услуг", "qty": 1, "price": 340000}
+  ],
+  "field_confidence": {"supplier_bin": 0.0},
+  "warnings": ["БСН/БИН содержит символы OCR (l, O); значение не исправлено и оставлено null."]
+}
